@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  namespace: default  # ✅ חשוב ל-ArgoCD
+  namespace: default  
   labels:
     app: nginx
 spec:
@@ -25,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-service
-  namespace: default  # ✅ חשוב ל-ArgoCD
+  namespace: default  
 spec:
   selector:
     app: nginx
@@ -34,4 +34,4 @@ spec:
       port: 80
       targetPort: 80
       nodePort: 30303
-  type: NodePort  # ✅ תקין, בלי סימן שאלה
+  type: NodePort  
